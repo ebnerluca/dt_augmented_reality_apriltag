@@ -79,8 +79,6 @@ class ARNode(DTROS):
         P_list = []
 
         for H in homography:
-            r1 = H[:,0]
-            r2 = H[:,1]
 
             R2D_t = np.linalg.inv(intrinsic).dot(H)  # [R2D_t] = [r1, r2, t]
             R2D_t = R2D_t / np.linalg.norm(R2D_t[:, 0]) #normalize
