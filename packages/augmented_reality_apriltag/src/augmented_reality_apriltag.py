@@ -50,6 +50,7 @@ class ARNode(DTROS):
 
 
         # Intrinsics
+        rospy.loginfo("[ARNode]: Loading Camera Intrinsics ...")
         if(not os.path.isfile(f'/data/config/calibrations/camera_intrinsic/{self.veh}.yaml')):
             rospy.logwarn(f'[AugmentedRealityBasics]: Could not find {self.veh}.yaml. Loading default.yaml')
             camera_intrinsic = self.readYamlFile(f'/data/config/calibrations/camera_intrinsic/default.yaml')
